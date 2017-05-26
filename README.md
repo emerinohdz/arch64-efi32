@@ -19,6 +19,10 @@ Useful for intel devices like the [LattePanda](http://www.lattepanda.com/).
 *For all of the following commands to work, you need to change to the root folder
 of the project.*
 
+*For now, you need to manually download an arch64 ISO file, and modify the
+iso_file variable in the runnerfile.sh script to point to it. In a future
+release, this will be automated too.*
+
 To build a new ISO, you'll need to first install the bash-task-runner:
 
     npm install

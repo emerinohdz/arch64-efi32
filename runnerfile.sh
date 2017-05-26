@@ -6,10 +6,12 @@
 cd `dirname ${0}`
 source node_modules/bash-task-runner/src/runner.sh
 
+# This should point to the original arch64 ISO downloaded.
 iso_file="src/iso/archlinux-2017.05.01-x86_64.iso"
-isolinux_bin_file="/usr/lib/syslinux/bios/isolinux.bin"
 filename=$(basename "$iso_file")
 filename="${filename%.*}"
+
+isolinux_bin_file="/usr/lib/syslinux/bios/isolinux.bin"
 
 # Default is to clean, build and generate ISO image under target folder.
 task_default() {
