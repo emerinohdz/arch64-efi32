@@ -7,8 +7,10 @@ Useful for intel devices like the LattePanda.
 
 # Dependencies
 
-* NPM is needed to download the [bash-task-runner](https://github.com/stylemistake/bash-task-runner).
-* A working GNU/Linux environment, with grub and bsdtar packages installed.
+* NPM: Needed to download the [bash-task-runner](https://github.com/stylemistake/bash-task-runner).
+* GRUB 2 (i386-efi): Creates the EFI 32 bootloader.
+* bsdtar: Used to unpack the ISO image.
+* cdrtools: Used to generate de ISO image.
 
 # Getting started
 
