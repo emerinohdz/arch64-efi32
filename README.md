@@ -12,6 +12,7 @@ Useful for intel devices like the [LattePanda](http://www.lattepanda.com/).
 * bsdtar: Used to unpack the ISO image.
 * cdrtools: Used to generate de ISO image.
 * libisoburn: Needed to create bootable USB images (xorriso).
+* mtools: For mcopy command, needed to modify image disk files (.img) without mounting.
 
 # Getting started
 
