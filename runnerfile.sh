@@ -72,13 +72,6 @@ task_build() {
     # copy efi32 bootloader
     runner_run cp "target/bootia32.efi" "target/iso/EFI/boot/";
 
-    runner_log "ISO contents ready";
-}
-
-# Generate ISO image file
-task_dist() {
-    check_target_dir;
-
     # TODO: According to this 
     # https://wiki.archlinux.org/index.php/Remastering_the_Install_ISO
     # isolinux.bin should always be the same version as the one used to 
@@ -91,6 +84,13 @@ task_dist() {
         -D o \
         -i target/iso/EFI/archiso/efiboot.img \
         target/bootia32.efi ::EFI/boot/bootia32.efi
+
+    runner_log "ISO contents ready";
+}
+
+# Generate ISO image file
+task_dist() {
+    check_target_dir;
 
     runner_run xorriso -as mkisofs \
         -iso-level 3 \
