@@ -1,5 +1,5 @@
 #!/bin/bash
-#### Tasks for generating a bootable EFI32 Archlinux ISO image.
+#### Tasks for generating a bootable EFI32 Archlinux x64 ISO image.
 #### Author: Edgar Merino - emerino at nuevebit dot com
 #### Date: 26 may 2017
 
@@ -10,6 +10,11 @@ iso_file="src/iso/archlinux-2017.05.01-x86_64.iso"
 isolinux_bin_file="/usr/lib/syslinux/bios/isolinux.bin"
 filename=$(basename "$iso_file")
 filename="${filename%.*}"
+
+# Default is to clean, build and generate ISO image under target folder.
+task_default() {
+    runner_sequence clean build dist;
+}
 
 # Unpack the original ISO image.
 task_unpack() {

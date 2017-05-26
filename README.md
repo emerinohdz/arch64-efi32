@@ -15,17 +15,20 @@ Useful for intel devices like the [LattePanda](http://www.lattepanda.com/).
 
 # Getting started
 
+*For all of the following commands to work, you need to change to the root folder
+of the project.*
+
 To build a new ISO, you'll need to first install the bash-task-runner:
 
     npm install
 
-Then, you can simply call the runner to generate the ISO:
+Then, you can simply call the runnerfile.sh script to generate the ISO:
 
-    node_modules/bash-task-runner/bin/runner
+    ./runnerfile.sh 
 
 There are other tasks available, you can first unpack the ISO 
 (to include modules, for instance), and then repackage it:
 
-    node_modules/bash-task-runner/bin/runner unpack
+    ./runnerfile.sh unpack
     // modify ISO contents as needed
-    node_modules/bash-task-runner/bin/runner pack
+    ./runnerfile.sh build dist
