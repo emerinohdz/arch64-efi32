@@ -32,4 +32,4 @@ There are other tasks available, you can first unpack the ISO
 
     ./runnerfile.sh unpack
     // modify ISO contents as needed
-    ./runnerfile.sh build dist
+    ./runnerfile.sh 
