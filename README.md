@@ -3,7 +3,7 @@
 This project allows for the creation of a bootable EFI-32 Archlinux x64 ISO
 image. 
 
-Useful for intel devices like the LattePanda.
+Useful for intel devices like the [LattePanda](http://www.lattepanda.com/).
 
 # Dependencies
 
@@ -11,6 +11,7 @@ Useful for intel devices like the LattePanda.
 * GRUB 2 (i386-efi): Creates the EFI 32 bootloader.
 * bsdtar: Used to unpack the ISO image.
 * cdrtools: Used to generate de ISO image.
+* libisoburn: Needed to create bootable USB images (xorriso).
 
 # Getting started
 
