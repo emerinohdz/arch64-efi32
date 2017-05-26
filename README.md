@@ -31,5 +31,5 @@ There are other tasks available, you can first unpack the ISO
 (to include modules, for instance), and then repackage it:
 
     ./runnerfile.sh unpack
-    // modify ISO contents as needed
+    # modify ISO contents as needed
     ./runnerfile.sh 
