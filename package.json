@@ -2,7 +2,7 @@
   "name": "arch64-efi32",
   "description": "Generate bootable EFI 32 Archlinux x64 ISO images.",
   "version": "0.1.1",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "devDependencies": {
     "bash-task-runner": "^0.7.1"
   }
