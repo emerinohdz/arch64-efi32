@@ -1,7 +1,21 @@
-#!/bin/bash
-#### Tasks for generating a bootable EFI32 Archlinux x64 ISO image.
-#### Author: Edgar Merino - emerino at nuevebit dot com
-#### Date: 26 may 2017
+#!/usr/bin/env bash
+# 
+# Copyright (c) 2017 Edgar Merino <emerino at nuevebit dot com>.
+# 
+# This program is free software: you can redistribute it and/or modify  
+# it under the terms of the GNU Lesser General Public License as published by  
+# the Free Software Foundation, version 3.
+#
+# This program is distributed in the hope that it will be useful, but 
+# WITHOUT ANY WARRANTY; without even the implied warranty of 
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License 
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+#
+# Tasks for generating a bootable EFI32 Archlinux x64 ISO image.
 
 cd `dirname ${0}`
 source node_modules/bash-task-runner/src/runner.sh
