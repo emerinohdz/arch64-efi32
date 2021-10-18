@@ -7,33 +7,22 @@ Useful for intel devices like the [LattePanda](http://www.lattepanda.com/).
 
 # Dependencies
 
-* NPM: Needed to download the [bash-task-runner](https://github.com/stylemistake/bash-task-runner).
-* GRUB 2 (i386-efi): Creates the EFI 32 bootloader.
-* bsdtar: Used to unpack the ISO image.
-* cdrtools: Used to generate de ISO image.
-* libisoburn: Needed to create bootable USB images (xorriso).
-* mtools: For mcopy command, needed to modify image disk files (.img) without mounting.
+* Make
+* Docker Engine
 
 # Getting started
 
 *For all of the following commands to work, you need to change to the root folder
 of the project.*
 
-*For now, you need to manually download an arch64 ISO file, and modify the
-iso_file variable in the runnerfile.sh script to point to it. In a future
-release, this will be automated too.*
+Build a new ISO with a efi32 loader using the `dist` task:
 
-To build a new ISO, you'll need to first install the bash-task-runner:
+    make build runner TASK=dist
 
-    npm install
+See [Makefile](Makefile) `task_` rules for other available tasks.
 
-Then, you can simply call the runnerfile.sh script to generate the ISO:
+# Dev only
 
-    ./runnerfile.sh 
+## Githooks
 
-There are other tasks available, you can first unpack the ISO 
-(to include modules, for instance), and then repackage it:
-
-    ./runnerfile.sh unpack
-    # modify ISO contents as needed
-    ./runnerfile.sh 
+    git config core.hooksPath hooks
