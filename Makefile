@@ -1,12 +1,13 @@
 SRC_VOLUME_MOUNT ?= $(shell pwd)
 ARCH_VERSION ?= 2021.10.01
-OUTPUT_ISO ?= target/arch64-efi32.iso
+ARCH_MIRROR ?= http://il.us.mirror.archlinux-br.org
+OUTPUT_ISO ?= target/arch64-$(ARCH_VERSION)-efi32.iso
 
 UID := $(shell id -u)
 GID := $(shell id -g)
 CONTAINER_IMAGE := arch64-efi32:latest
 ARCH_ISO_NAME := archlinux-$(ARCH_VERSION)-x86_64
-ARCH_ISO_URL := http://il.us.mirror.archlinux-br.org/iso/$(ARCH_VERSION)/$(ARCH_ISO_NAME).iso
+ARCH_ISO_URL := $(ARCH_MIRROR)/iso/$(ARCH_VERSION)/$(ARCH_ISO_NAME).iso
 ARCH_ISO_PATH := download/$(ARCH_ISO_NAME).iso
 ARCH_EXTRACTED_PATH := target/iso/$(ARCH_ISO_NAME)
 EFI32_PATH := target/bootia32.efi
@@ -14,6 +15,9 @@ EFIBOOT_IMG_PATH := target/efiboot.img
 
 define docker_run
 	docker run --rm \
+		-e ARCH_MIRROR=$(ARCH_MIRROR) \
+		-e ARCH_VERSION=$(ARCH_VERSION) \
+		-e OUTPUT_ISO=$(OUTPUT_ISO) \
 		-v $(SRC_VOLUME_MOUNT):/project -w /project \
 		-it \
 		--entrypoint $1 \
@@ -79,7 +83,7 @@ $(EFI32_PATH): assets/grub.cfg
 		-o "$(EFI32_PATH)" \
 		"boot/grub/grub.cfg=assets/grub.cfg";
 
-task_dist: $(OUTPUT_ISO)
+task_iso: $(OUTPUT_ISO)
 
 $(OUTPUT_ISO): $(ARCH_EXTRACTED_PATH) $(EFIBOOT_IMG_PATH) 
     # see https://gitlab.archlinux.org/archlinux/archiso/-/blob/master/archiso/mkarchiso

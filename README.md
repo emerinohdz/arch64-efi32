@@ -15,9 +15,9 @@ Useful for intel devices like the [LattePanda](http://www.lattepanda.com/).
 *For all of the following commands to work, you need to change to the root folder
 of the project.*
 
-Build a new ISO with a efi32 loader using the `dist` task:
+Build a new Archlinux 2021.10.01 ISO with a efi32 loader using the `iso` task:
 
-    make build runner TASK=dist
+    make build runner TASK=iso ARCH_VERSION=2021.10.01
 
 See [Makefile](Makefile) `task_` rules for other available tasks.
 
